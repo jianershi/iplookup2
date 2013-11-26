@@ -17,7 +17,7 @@ var myLatlng;
 var markers = [];
 var baseurl = "http://ip-api.com/json/"
 var failToLoad = 0;
-
+var requests = [];
 window.onpopstate = function(e){
     if(e.state){
         // console.log(e.state)
@@ -31,6 +31,14 @@ window.onpopstate = function(e){
 
 function getIPLocation(url,fn)
 {
+  // first clear request queue before new request is sent
+  for(var i = 0; i < requests.length; i++)
+  {
+    requests[i].abort();
+    requests=[];
+  }
+
+  requests.push(
   $.ajax({
         url: baseurl+url,
         success: function( data ) {
@@ -53,7 +61,7 @@ function getIPLocation(url,fn)
 
         },
         dataType: "json"
-    });
+    }));
 }
 function putMarkerDown()
 {
@@ -166,9 +174,9 @@ $( window ).resize(function() {
   </form>
 </div>
 <p>
-<div id='social-button'><a href="https://twitter.com/hipaulshi" class="twitter-follow-button" data-show-count="false">Follow @hipaulshi</a>
+<!-- <div id='social-button'><a href="https://twitter.com/hipaulshi" class="twitter-follow-button" data-show-count="false">Follow @hipaulshi</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-</div>
+</div> -->
 <br />
 
 </div>
