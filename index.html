@@ -59,6 +59,10 @@ function getIPLocation(url,fn)
           //callback function
           fn();
 
+          //add ajax tracking for google analytics
+          _gaq.push(['_trackPageview', url]);
+
+
         },
         dataType: "json"
     }));
@@ -174,9 +178,9 @@ $( window ).resize(function() {
   </form>
 </div>
 <p>
-<div id='social-button'><a href="https://twitter.com/hipaulshi" class="twitter-follow-button" data-show-count="false">Follow @hipaulshi</a>
+<!-- <div id='social-button'><a href="https://twitter.com/hipaulshi" class="twitter-follow-button" data-show-count="false">Follow @hipaulshi</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-</div>
+</div> -->
 <br />
 
 </div>
@@ -200,12 +204,6 @@ _gaq.push(['_trackPageview']);
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-
-//ajax tracking
-$(document).on('ajaxComplete', function (event, request, settings) {
-    _gaq.push(['_trackPageview', settings.url]);
-    // console.log("ajax event complete"+settings.url)
-});
 </script>
 <!--End of Google Analytics Code-->
 </html>
