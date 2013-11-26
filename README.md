@@ -1,7 +1,7 @@
 #IP Lookup 2
 ![img](https://raw.github.com/paulshi/iplookup/master/logo.png)
 
-This is a Ajax implementation of [IP Lookup](https://github.com/paulshi/iplookup), it result in almost instantaneous response, and no longer require flask. It is hosted as a static page on github instead of heroku.
+This is a Ajax implementation of [IP Lookup](https://github.com/paulshi/iplookup), it result in almost instantaneous response, and no longer require flask. It is hosted as a static page on github instead of heroku. Rest API is no longer supported since this is a static implementation.
 
 ##Demo
 [http://paulshi.github.io/iplookup2](http://paulshi.github.io/iplookup2)
