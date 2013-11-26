@@ -49,3 +49,6 @@ THE SOFTWARE.
 ```
 ##Why Did I Build This?
 [http://blog.paulshi.me/technical/2013/11/21/IP-Look.html](http://blog.paulshi.me/technical/2013/11/21/IP-Look.html)
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/paulshi/iplookup2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
