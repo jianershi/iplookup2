@@ -6,7 +6,9 @@ This is a Ajax implementation of [IP Lookup](https://github.com/paulshi/iplookup
 ##Demo
 [http://paulshi.github.io/iplookup2](http://paulshi.github.io/iplookup2)
 
-And a custom domain! >[iplook.co](http://iplook.co)<
+And a custom domain!
+
+[**iplook.co**](http://iplook.co)
 
 ##Credits
 The backend API is powered by [IP Geolocation API](http://ip-api.com/docs/). They provide free usage of their API for non-commercial use.
