@@ -16,7 +16,6 @@ var map;
 var myLatlng;
 var markers = [];
 var baseurl = "http://ip-api.com/json/"
-var failToLoad = 0;
 var requests = [];
 window.onpopstate = function(e){
     if(e.state){
@@ -28,7 +27,22 @@ window.onpopstate = function(e){
         });
 };
 }
+function getLatLonAndInsertJsonString(data)
+{
+  lon = data['lon']
+  lat = data['lat']
 
+  if (lon==null || lat == null){
+    console.log("lon/lat doesn't exist");
+    lon = 0;
+    lat = 0;
+  }
+
+  myLatlng = new google.maps.LatLng( lat, lon )
+  
+  IPLocationString=JSON.stringify(data, null, 4)
+  $( "#language-json" ).html( IPLocationString );
+}
 function getIPLocation(url,fn)
 {
   // first clear request queue before new request is sent
@@ -42,31 +56,31 @@ function getIPLocation(url,fn)
   $.ajax({
         url: baseurl+url,
         success: function( data ) {
-          lon = data['lon']
-          lat = data['lat']
-
-          if (lon==null || lat == null){
-            console.log("lon/lat doesn't exist");
-            lon = 0;
-            lat = 0;
-          }
-
-          myLatlng = new google.maps.LatLng( lat, lon )
-          
-          IPLocationString=JSON.stringify(data, null, 4)
-            $( "#language-json" ).html( IPLocationString );
-          
+          getLatLonAndInsertJsonString(data)
           //callback function
           fn();
-
           //add ajax tracking for google analytics
           _gaq.push(['_trackPageview', url]);
-
-
         },
         dataType: "json"
     }));
 }
+
+function getIPLocationSync(fn)
+{
+  $.ajax({
+      url: baseurl,
+      success: function( data ) {
+        getLatLonAndInsertJsonString(data)
+        //callback function
+        fn();
+      },
+      dataType: "json",
+      async: false
+  });
+}
+
+
 function putMarkerDown()
 {
   var marker = new google.maps.Marker({
@@ -95,7 +109,7 @@ function reLocateMarker()
 //load map style file
 function initialize() {
   $.getScript("googlemapStyle.js", function(){
-    getIPLocation("",function(){ 
+    getIPLocationSync(function(){ 
       var mapOptions = {
         zoom: 12,
         center: myLatlng,
@@ -112,8 +126,9 @@ function initialize() {
       var styledMapType = new google.maps.StyledMapType(styles, {name:"IP Look 2"});
       map.mapTypes.set('Styled', styledMapType);
 
-      reLocateMarker();
-
+      
+      $("#ipToSearch").select();
+      putMarkerDown();
     });
   });
 
