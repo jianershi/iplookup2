@@ -1,16 +1,17 @@
-#IP Lookup 2
+# IP Lookup 2
 ![img](https://raw.github.com/paulshi/iplookup2/master/logo.png)
 
 This is a Ajax implementation of [IP Lookup](https://github.com/paulshi/iplookup), it result in almost instantaneous response, and no longer require flask. It is hosted as a static page on github instead of heroku. Rest API is no longer supported since this is a static implementation.
 
-##Demo
-[http://paulshi.github.io/iplookup2](http://paulshi.github.io/iplookup2)
+## Demo
 
-And a custom domain!
+[paulshi.github.io/iplookup2](http://paulshi.github.io/iplookup2)
 
-[**iplook.co**](http://iplook.co)
+[iplook.uk.to](http://iplook.uk.to)
 
-##Credits
+
+## Credits
+
 The backend API is powered by [IP Geolocation API](http://ip-api.com/docs/). They provide free usage of their API for non-commercial use.
 
 The template is [Bootstrap](http://getbootstrap.com/).
@@ -22,10 +23,12 @@ The color of the text is 紅(kurenai) from [Nippon Colors](http://nipponcolors.c
 Redesign inspired by [@sleepingkyoto](http://twitter.com/sleepingkyoto) ([github](https://github.com/liliff)) at [ip.milk.tea.jp](http://ip.milk.tea.jp)
 
 
-##Google Map Styling
+## Google Map Styling
+
 If you are wondering how you can reuse my Google Map styling, I have created a simple version here: [https://github.com/paulshi/GoogleMapStyling](https://github.com/paulshi/GoogleMapStyling)
 
-##License
+## License
+
 ```
 The MIT License (MIT)
 
@@ -49,8 +52,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
-##Why Did I Build This?
-[http://blog.paulshi.me/technical/2013/11/21/IP-Look.html](http://blog.paulshi.me/technical/2013/11/21/IP-Look.html)
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/paulshi/iplookup2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
