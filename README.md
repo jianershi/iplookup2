@@ -1,13 +1,15 @@
-# IP Lookup 2
+# IP Lookup 2  #
+#### [iplook.uk.to](http://iplook.uk.to) ####
+
 ![img](https://raw.github.com/paulshi/iplookup2/master/logo.png)
 
 This is a Ajax implementation of [IP Lookup](https://github.com/paulshi/iplookup), it result in almost instantaneous response, and no longer require flask. It is hosted as a static page on github instead of heroku. Rest API is no longer supported since this is a static implementation.
 
 ## Demo
 
-[paulshi.github.io/iplookup2](http://paulshi.github.io/iplookup2)
+[paulshi.github.io/iplookup2](http://paulshi.github.io/iplookup2) or [iplook.uk.to](http://iplook.uk.to)
 
-[iplook.uk.to](http://iplook.uk.to)
+
 
 
 ## Credits
